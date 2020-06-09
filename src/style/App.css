@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css?family=Muli");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans");
+
+.App {
+  text-align: center;
+  /* font-family: sans-serif; */
+}
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  /* margin-right: auto;
+  margin-left: auto; */
+}
+.font  ,div , h1, h2, h3, h4, h5 , h6, p, span{
+  font-family:'Montserrat',  sans-serif,Arial, Helvetica !important;
+}
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 14vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* FOOTER */
+
+.twitter-box {
+  background-color: #00acee;
+  margin-right: 5px;
+  padding: 25px;
+  cursor: pointer;
+}
+.fb-box {
+  background-color: #3b5998;
+  margin-right: 5px;
+  padding: 25px;
+  cursor: pointer;
+}
+
+/* RIGHT BONUS CARDS */
+
+.right-bonus-card {
+  max-width: 345px;
+  height: 100px;
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+}
+
+/* APP HEADER */
+
+.divider {
+  margin-top: 7px;
+  color: #e0e0e0;
+}
+
+.divider-admin {
+  margin-top: 7px;
+  color: #e0e0e0;
+  margin-right: 5px;
+  float: left;
+}
+
+.login {
+  margin-left: 2%;
+}
+
+.login > a {
+  color: #38d39f;
+  font-family: "IBM plex sans";
+}
+
+.signup {
+  margin-left: 10px;
+}
+
+.signup > a {
+  color: #9099a2;
+  font-family: "IBM plex sans";
+}
+
+.header-icons {
+  margin-left: 2px;
+  color: #9099a2;
+}
+
+.social-media-header {
+  position: absolute;
+  top: 25px;
+  right: 2%;
+}
+.social-media-header > a {
+  color: #9099a2;
+}
+
+.social-media-header > a:hover {
+  color: #00acee;
+}
+
+/* HOME */
+
+.home-paper-new {
+  height: 400px;
+  width: 230px;
+  text-align: center;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.slick-slide {
+  padding: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.home-paper {
+  height: 400px;
+  width: 230px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.table-cell {
+  text-align: center !important;
+}
+
+.table-row {
+  font-family: "Nunito Sans";
+  color: #757575 !important;
+  margin-left: 10px;
+}
+
+/* ARTICLES */
+
+.articles-main {
+  width: 72%;
+  margin-left: 12%;
+}
+
+#articles-grid {
+  margin-top: 15px;
+}
+
+.one-col-grid-item {
+  width: 80%;
+  display: inline-block;
+}
+
+.two-col-grid-item {
+  width: 50%;
+}
+
+.articles-pagination {
+  margin-top: 20px;
+  margin-left: 42%;
+  font-size: 12px;
+}
+
+.articles-pagination > a {
+  color: grey;
+}
+
+/* SPREADSHEET */
+
+.spreadhsheet-image {
+  max-width: 80%;
+  border: solid 3px #4490ba;
+  border-radius: 100%;
+  margin: auto;
+  display: block;
+}
+
+.stats-card {
+  text-align: center;
+  height: 195;
+}
+
+.stats-card-content {
+  font-weight: bold;
+  font-family: "Nunito Sans";
+  color: #4490ba;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* CARDS */
+
+.card-title {
+  height: 20%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: underline;
+  color: #000000;
+  font-family: "IBM Plex Sans";
+  font-size: 0.875rem;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  max-width: 100%;
+  height: 110%;
+  display: inline-block;
+}
+
+/* BONUSES */
+
+.bonus-title {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 28px;
+  text-decoration: underline;
+}
+
+.bonus-text-heading {
+  color: #a9a9a9;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.bet-detail-text-label {
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.bet-detail-text-value {
+  color: black;
+  font-size: 10px;
+  padding: 10px;
+  margin-top: -5px;
+  text-align: left;
+}
+
+.bonus-text-url {
+  color: #a9a9a9;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: -24px;
+}
+
+.bonus-text-value {
+  margin-top: -10px;
+}
+
+.bonus-card {
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.image-col-divs .MuiButton-label {
+  color: white;
+}
+
+.bet-detail-divs .MuiButton-label {
+  color: white;
+}
+
+.bonus-image-icon {
+  vertical-align: middle;
+  max-width: 60%;
+  padding: 5px;
+}
+
+.bonus-col-divs {
+  width: 20%;
+  float: left;
+  height: 100%;
+}
+
+.image-col-divs {
+  width: 20%;
+  float: left;
+  height: 100px;
+}
+
+.helper {
+  display: inline-block;
+  /* height: 100%; */
+  vertical-align: middle;
+}
+
+.bet-detail-divs {
+  width: 33%;
+  float: left;
+  height: 100%;
+}
+
+.bet-detail-bonus-divs {
+  width: 25%;
+  float: left;
+  height: 100px;
+}
+
+.bet-detail-bonus-divs .MuiButton-label {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .divider,
+  .divider-admin {
+    visibility: hidden;
+    display: none;
+  }
+  #home-settle-bets {
+    visibility: hidden;
+    display: none;
+  }
+
+  .login {
+    margin-left: 0px;
+    margin-bottom: 5px;
+  }
+
+  .social-media-header {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    top: 5px;
+  }
+  .signup {
+    margin-left: 0px;
+  }
+
+  #right-cards {
+    margin-top: 20px;
+  }
+
+  .two-col-grid-item {
+    width: 100%;
+  }
+
+  .one-col-grid-item {
+    width: 100%;
+  }
+
+  .stats-card {
+    margin-top: 10px;
+  }
+
+  .carousel {
+    height: 130%;
+  }
+
+  .col-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .MuiButtonBase-root {
+    margin-top: 14px !important;
+    margin-right: 5px !important;
+    width: 85%;
+  }
+
+  .right-bonus-card {
+    height: 150px;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

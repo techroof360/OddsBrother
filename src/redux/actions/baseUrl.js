@@ -1,0 +1,1 @@
+export const baseUrl = "https://oddbro-7507.wilhelm-osl.servebolt.cloud/api";

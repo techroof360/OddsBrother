@@ -1,0 +1,121 @@
+#headerNav {
+  color:  #282c35;
+  /* height: 30px; */
+  /* font-size: 16px; */
+  
+  font-family: 'Montserrat',  sans-serif,Arial, Helvetica  ;
+}
+.font  ,div , h1, h2, h3, h4, h5 , h6, p, span{
+  font-family:'Montserrat',  sans-serif,Arial, Helvetica !important;
+}
+#headerNav:hover {
+  text-decoration: none;
+  color: #444343;
+}
+#heading:hover {
+  text-decoration: none !important;
+  font-style: italic;
+}
+@media screen and (max-width: 400px) {
+  #heading {
+ 
+  font-size: 20px;
+  }
+}
+/* @media screen and (min-width: 772px) {
+  .headerNav {
+    border-left: 2px solid #e0e2e8;
+  }
+} */
+#controlHeaderImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  display: inline-flex;
+}
+.SamplePreArrow {
+  background-color: green;
+  width: 100 !important;
+  height: 100 !important;
+  margin-top: 100 !important;
+  background-image: url("../images/22bet.png");
+}
+
+ /* @media screen and (max-width: 772px) {
+  #handelToggle {
+    float: left !important;
+  }
+} */
+ @media screen and (max-width: 770px) {
+  #socialIcon {
+   display: none;
+  }
+} 
+@media screen and (min-width: 772px) {
+  #heading {
+    margin-top: 12px;
+  }
+}
+#handelLoader{
+  background-color: green !important;
+text-align: center;
+justify-content: center;
+align-items: center;
+align-self: center;
+
+
+}
+@media screen and (max-width: 770px) {
+  #handelLogo {
+  width: 140px !important;
+  }
+} 
+
+/* .mr-auto, .mx-auto {
+  
+  margin-left: -50px !important;
+} */
+@media screen and (max-width: 770px) {
+  #loginLogo {
+display: none !important;
+/* border-bottom: 1px solid black; */
+
+  }
+} 
+
+.navbar-nav{
+  padding-left:'30%' !important;
+ 
+
+}
+
+@media screen and (min-width: 770px) {
+  #handelNav {
+/* background-color: brown !important; */
+/* margin-left: 20% !important; */
+/* float: right !important; */
+position: absolute;
+    right: 0px;
+  }
+}
+/* 
+@media (min-width: 1200px)
+{
+.container, .container-lg, .container-md, .container-sm {
+    width: '100%' !important;
+    background-color: tan !important;
+}
+}
+@media (max-width: 700px)
+{
+.container, .container-lg, .container-md, .container-sm {
+    width: '100%' !important;
+}
+}
+ */
+ #navBrr{
+  background-color:#ffffff !important;
+}
+.handelSlider  .slick-list{
+  overflow: hidden !important;
+}

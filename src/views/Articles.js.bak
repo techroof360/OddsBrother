@@ -1,0 +1,239 @@
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import { Container, Row, Col } from "reactstrap";
+import AppHeader from "../components/AppHeader";
+import Grid from "@material-ui/core/Grid";
+import OurCarousel from "../components/OurCarousel";
+import Cards from "./Cards";
+import axios from "axios";
+import apiEndpoints from "../resources/apiEndpoins";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Slide from "@material-ui/core/Slide";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+
+const useStyles = makeStyles(theme => ({
+  margin: {
+    marginTop: theme.spacing(3)
+  },
+  carouselRow: {
+    marginTop: theme.spacing(3),
+    textAlign: "center",
+    background: "#dcd0c0",
+    borderRadius: 5
+  },
+  cardContent: {
+    height: 150
+  },
+  cardTitle: {
+    color: "#ea6903"
+  },
+  cardDesc: {
+    height: 100
+  },
+  card: {
+    maxWidth: 320,
+    minWidth: 320,
+    height: 350,
+    maxHeight: 350
+  },
+  media: {
+    height: 140
+  },
+  root: {
+    flexGrow: 1
+  },
+  imagepreview: {
+    //width: "100%",
+    maxHeight: 500,
+    marginBottom: 10
+  },
+  articlePopup: {
+    minWidth: 350
+  }
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+const Articles = props => {
+  const classes = useStyles();
+  const [data, setData] = useState([]);
+
+  const [open, setOpen] = React.useState(false);
+
+  const [imageSrc, setImageSrc] = React.useState({});
+
+  const [article, setArticle] = React.useState({});
+
+  const handleClickOpen = (e, article) => {
+    // let src = require("../image-uploads/" + article.imageName);
+    // setImageSrc(src);
+    // setArticle(article);
+    // setOpen(true);
+    e.preventDefault();
+    let url = window.location.href.split("/");
+
+    url = url[0] + "/article-detail/" + article.articleId;
+
+    window.open(url, "_blank");
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    axios.get(apiEndpoints.ARTICLE_API).then(res => {
+      setData(res.data._embedded.articles);
+    });
+  }, []);
+
+  return (
+    <Container>
+      <Row className={classes.carouselRow}>
+        <Col>
+          <OurCarousel />
+        </Col>
+      </Row>
+
+      <Row className={classes.margin}>
+        <Col xs="9">
+          <Grid container className={classes.root} spacing={8}>
+            <Grid item xs={12}>
+              <Grid container justify="center" spacing={8}>
+                {data.map((article, index) => {
+                  if (index < 6)
+                    return (
+                      <Grid key={article.articleId} item>
+                        <a
+                          href=""
+                          onClick={e => handleClickOpen(e, article)}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <Card
+                            className={classes.card}
+                            //onClick={() => handleClickOpen(article)}
+                          >
+                            <CardActionArea>
+                              <CardMedia
+                                className={classes.media}
+                                image={require("../image-uploads/" +
+                                  article.imageName)}
+                                title="Contemplative Reptile"
+                              />
+                            </CardActionArea>
+                            <CardContent className={classes.cardContent}>
+                              <Typography
+                                className={classes.cardTitle}
+                                gutterBottom
+                                variant="h6"
+                                component="h6"
+                              >
+                                {article.title}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="textSecondary"
+                                component="p"
+                                noWrap
+                                className={classes.cardDesc}
+                              >
+                                <div
+                                  dangerouslySetInnerHTML={{
+                                    __html: article.category
+                                  }}
+                                />
+                              </Typography>
+                            </CardContent>
+
+                            {/* <CardActions>
+                        <Button
+                          size="small"
+                          color="primary"
+                          onClick={() => handleClickOpen(article)}
+                        >
+                          Click to view more detail
+                        </Button>
+                      </CardActions> */}
+                          </Card>
+                        </a>
+                      </Grid>
+                    );
+                })}
+              </Grid>
+            </Grid>
+          </Grid>
+          {data.map((article, index) => {
+            if (index > 5)
+              return (
+                <p style={{ marginLeft: 50, marginTop: 30 }}>
+                  <a
+                    href=""
+                    onClick={e => handleClickOpen(e, article)}
+                    style={{ width: "100%" }}
+                  >
+                    {article.title}
+                  </a>
+                </p>
+              );
+          })}
+        </Col>
+
+        <Col xs="3">
+          <Cards />
+        </Col>
+      </Row>
+
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={Transition}
+      >
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <DialogTitle id="responsive-dialog-title">{article.title}</DialogTitle>
+        <DialogContent className={classes.articlePopup}>
+          <DialogContentText>
+            <img
+              className={classes.imagepreview}
+              src={imageSrc}
+              alt={article.imageName}
+            />
+            <div
+              dangerouslySetInnerHTML={{
+                __html: article.category
+              }}
+            />
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
+    </Container>
+  );
+};
+
+export default Articles;

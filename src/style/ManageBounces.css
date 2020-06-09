@@ -1,0 +1,28 @@
+#bounceTabel{
+    font-size: 10px;
+    color: rgb(121, 121, 121);
+    top: 20px;
+    
+  
+   
+}
+#bonceOffer{
+    font-size: 14px;
+    font-weight: bolder;
+    text-decoration: underline;
+   
+    margin-bottom: -10px;
+}
+#lowestOdds , #turnOver{
+    margin-bottom: -10px;
+}
+.handelAlinment{
+    text-align: center;
+}
+#claimBonusBtn{
+    background-color:#27DA36;
+    color: white;
+}
+.font  ,div , h1, h2, h3, h4, h5 , h6, p, span{
+    font-family:'Montserrat',  sans-serif,Arial, Helvetica !important;
+  }
